@@ -1,0 +1,11 @@
+clear all;
+clc;
+n = input('Enter the number of bits to encode:')
+W = input('Enter the message signal bandwidth:')
+B = n*W;
+disp('Channel Width in Hertz:',B)
+SNRo = 6*n - 7.2;
+//SNRo = 4.8 - 6*n;
+//SNRo = 1.8 + 6*n;
+disp('Output Signal to Noise Ratio in dB :',SNRo)
+
