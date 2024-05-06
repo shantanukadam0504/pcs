@@ -1,0 +1,15 @@
+SNR code :
+clc;
+clear all;
+a=input('Enter the amplitude of input signal:');
+fm=input('Enter the modulating frequency in Hz:');
+fs=input('Enter the sampling frequency in samples/second:');
+ts=1/fs; //sampling interval
+delta=2*%pi*a*fm*ts; //step size to avoid slope overload
+P0max=(a^2)/2; //maximum permissable output power
+sigma_q=(delta^2)/3; //quantization error
+W=fm; //maximum message BW
+N=W*ts*sigma_q; //average output noise power
+SNR0=P0max/N;
+SNR_dB=10*log10(SNR0);
+disp(SNR_dB,'Maximum Output Signal to Noise Ratio for Delta Modulation in dB:');
